@@ -11,12 +11,12 @@ before_install:
   - npm config set loglevel warn
 
 before_script:
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start || true
   - npm install -g grunt-cli
   - rm -rf node_modules/karma
   - export $(openssl aes-256-cbc -pass env:CREDENTIALS_PASS -d -in credentials)
 
 script:
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start || true
   - grunt build test lint
   - ./scripts/integration-tests.sh
