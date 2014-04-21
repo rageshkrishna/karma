@@ -18,5 +18,6 @@ before_script:
   - export $(openssl aes-256-cbc -pass env:CREDENTIALS_PASS -d -in credentials)
 
 script:
+  - `firefox --version > ~/version.txt`
   - grunt build test lint
   - ./scripts/integration-tests.sh
