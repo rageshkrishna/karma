@@ -1,12 +1,6 @@
 language: node_js
 node_js:
   - 0.10
-  - 0.8
-
-env:
-  global:
-  - SAUCE_USERNAME: vojtajina
-  - secure: "bRVY+hYZwMf1SqVnMyZRJTLD0gN1hLx9/MwO8MM/qBiu3YNjXy49XElfMdzMKN6cZeKTmhcnjmZonbJuI1PQ2t+utGkyjnlVLJ/OlWptreKLzIlcbt4hrdPoTcjmUTwDWq9Ex9cVoYX8AzCasETttpczp3P+s3+vmOUj8z25JyU="
 
 # Make sure we have new NPM.
 before_install:
@@ -23,6 +17,3 @@ before_script:
 script:
   - grunt build test lint
   - ./scripts/integration-tests.sh
-
-after_success:
-  - ./scripts/presubmit.sh
