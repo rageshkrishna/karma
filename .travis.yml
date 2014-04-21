@@ -3,7 +3,7 @@ node_js:
   - 0.10
 
 addons:
-  - firefox: "21.0"
+  firefox: "21.0"
 
 # Make sure we have new NPM.
 before_install:
